@@ -1,1 +1,1 @@
-export const AppName = "Firebase React Chakra UI Starter"
+export const AppName = "Sign language Translator"
