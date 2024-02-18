@@ -134,7 +134,7 @@ export const LoginPane = ({
                     Continue with Google
                 </Button>
             }
-            {
+            {/* {
                 onAnonymousLogin && <Button
                     colorScheme="cyan"
                     variant="outline"
@@ -146,7 +146,7 @@ export const LoginPane = ({
                 >
                     Continue as Guest
                 </Button>
-            }
+            } */}
             <TextDivider text="or" />
             <Text fontSize="md" fontWeight="500">
                 Login into your account
