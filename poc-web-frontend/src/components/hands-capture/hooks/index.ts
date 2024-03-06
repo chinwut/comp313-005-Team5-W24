@@ -23,8 +23,7 @@ function useLogic() {
 
   async function onResults(results) {
     if (canvasEl.current) {
-      if (results.multiHandLandmarks.length) {
-      }
+
       const ctx = canvasEl.current.getContext('2d');
 
       ctx.save();
