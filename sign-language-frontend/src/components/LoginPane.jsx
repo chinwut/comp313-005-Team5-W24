@@ -103,12 +103,12 @@ export const LoginPane = ({
             <Spacer />
             <Spacer />
             <Center>
-                <Logo />
+                {/* <Logo /> */}
             </Center>
             <Spacer />
             <Center>
                 <Heading as="h4" size="md" color="blue.600">
-                    Welcome back.
+                    Welcome to {AppName}
                 </Heading>
             </Center>
             {
