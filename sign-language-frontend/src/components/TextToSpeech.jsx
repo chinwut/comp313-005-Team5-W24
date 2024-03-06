@@ -1,4 +1,4 @@
-import { Button, Input } from '@chakra-ui/react';
+import { Button, Text, Input } from '@chakra-ui/react';
 import { useState, useEffect } from "react";
 
 const TextToSpeech = ({ text }) => {
@@ -90,7 +90,7 @@ const TextToSpeech = ({ text }) => {
 
       <label>
         Pitch:
-        <Input
+        <input
           type="range"
           min="0.5"
           max="2"
@@ -104,7 +104,7 @@ const TextToSpeech = ({ text }) => {
 
       <label>
         Speed:
-        <Input
+        <input
           type="range"
           min="0.5"
           max="2"
@@ -116,7 +116,7 @@ const TextToSpeech = ({ text }) => {
       <br />
       <label>
         Volume:
-        <Input
+        <input
           type="range"
           min="0"
           max="1"
