@@ -8,10 +8,12 @@ const TextToSpeech = ({ text }) => {
   const [pitch, setPitch] = useState(1);
   const [rate, setRate] = useState(1);
   const [volume, setVolume] = useState(1);
+  const [textState, setTextState] = useState(text);
 
   useEffect(() => {
+    setTextState(text);
     const synth = window.speechSynthesis;
-    const u = new SpeechSynthesisUtterance(text);
+    const u = new SpeechSynthesisUtterance(textState);
     setUtterance(u);
 
     // Add an event listener to the speechSynthesis object to listen for the voiceschanged event
