@@ -69,26 +69,26 @@ function useLogic() {
             maxVideoWidth * Math.min(...landmarksX),
             maxVideoHeight * Math.min(...landmarksY) - 15
           );
-          drawRectangle(
-            ctx,
-            {
-              xCenter:
-                Math.min(...landmarksX) +
-                (Math.max(...landmarksX) - Math.min(...landmarksX)) / 2,
-              yCenter:
-                Math.min(...landmarksY) +
-                (Math.max(...landmarksY) - Math.min(...landmarksY)) / 2,
-              width: Math.max(...landmarksX) - Math.min(...landmarksX),
-              height: Math.max(...landmarksY) - Math.min(...landmarksY),
-              rotation: 0,
-              rectId: 13,
-            },
-            {
-              fillColor: "transparent",
-              color: "#ff0000",
-              lineWidth: 1,
-            }
-          );
+          // drawRectangle(
+          //   ctx,
+          //   {
+          //     xCenter:
+          //       Math.min(...landmarksX) +
+          //       (Math.max(...landmarksX) - Math.min(...landmarksX)) / 2,
+          //     yCenter:
+          //       Math.min(...landmarksY) +
+          //       (Math.max(...landmarksY) - Math.min(...landmarksY)) / 2,
+          //     width: Math.max(...landmarksX) - Math.min(...landmarksX),
+          //     height: Math.max(...landmarksY) - Math.min(...landmarksY),
+          //     rotation: 0,
+          //     rectId: 13,
+          //   },
+          //   {
+          //     fillColor: "transparent",
+          //     color: "#ff0000",
+          //     lineWidth: 1,
+          //   }
+          // );
           drawConnectors(ctx, landmarks, HAND_CONNECTIONS, {
             color: "#00ffff",
             lineWidth: 2,
