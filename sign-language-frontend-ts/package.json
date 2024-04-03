@@ -8,6 +8,7 @@
     "major": "npm version major",
     "dev": "next dev",
     "build": "npm run minor && next build",
+    "deploy": "firebase deploy --only hosting",
     "start": "next start",
     "lint": "next lint"
   },
