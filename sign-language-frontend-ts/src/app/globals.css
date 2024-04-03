@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes fadeInScaleDown {
+  from {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.k2d-font-bold {
+  font-family: 'K2D', sans-serif;
+  font-weight: 700; /* Bold */
+}
+
+.home-title {
+  animation: fadeInScaleDown 1s ease-in-out forwards;
+}
+
+
+.home-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-banner::before, .home-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  
+}
+
+.home-banner::before {
+  background: linear-gradient(to bottom right, #FE7D0E, #FE6047, #FA408B);
+  animation: fadeInOut 3s ease-in-out infinite alternate;
+}
+
+.home-banner::after {
+  background: linear-gradient(to bottom right, #FE6047, #FE7D0E, #FA408B);
+  
+}
+
+.home-banner-sofa {
+  width: 480px;
+  height: 390px;
+  background: url(/sofa.png) center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.home-banner-thumb-up {
+  width: 210px;
+  height: 270px;
+  background: url(/thumb-up.png) center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  animation: rotate 2s linear infinite alternate;
+}
+
+.home-banner-light-blub {
+  width: 100px;
+  height: 100px;
+  background: url(/light-blub.png) center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.home-banner-rocket {
+  width: 100px;
+  height: 100px;
+  background: url(/rocket.png) center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 28%;
+  right: 5%;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+
+.home-banner-paper-plane {
+  width: 100px;
+  height: 100px;
+  background: url(/paper-plane.png) center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 25%;
+  right: 30%;
+  animation: bounce 2.2s ease-in-out infinite;
+}
+
+.sidebar-clap {
+  width: 100%;
+  height: 150px;
+  background: url(/claps.png) top right no-repeat;
+  background-size: 140px;
+}
