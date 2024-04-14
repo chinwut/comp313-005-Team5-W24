@@ -52,7 +52,7 @@ const ProfilePage = () => {
                 <div className="bg-beige-100 p-6 rounded-lg max-w-sm">
                     <div className="flex items-center space-x-4 mb-6">
                         <div className="rounded-full bg-gray-300 h-16 w-16 flex items-center justify-center overflow-hidden">
-                            <Image src="/avator.png" alt="User avatar" className="w-full h-full" />
+                            <Image src="/avator.png" width={16} height={16} alt="User avatar" className="w-full h-full" />
                         </div>
                         <div>
                             <h2 className="text-2xl font-bold">{user?.displayName}</h2>

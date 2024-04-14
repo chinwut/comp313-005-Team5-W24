@@ -21,19 +21,74 @@ const FriendPage = () => {
                 <div className="space-y-4">
                     <div className="flex items-center">
                         <div className="flex items-center min-w-[250px]">
-                            <Image src="/avator.png" alt="avator" className="w-12 h-12 rounded-full mr-3" />
+                            <Image src="/avator.png" alt="avator" width={12} height={12} className="w-12 h-12 rounded-full mr-3" />
                             <div>
-                                <p className="font-bold">{user?.displayName} (me)</p>
-                                <p className="text-gray-600">{user?.email}</p>
+                                <p className="font-bold">Avery</p>
+                                <p className="text-gray-600">avery@gmail.com</p>
                             </div>
                         </div>
                         <div className="flex-1">
-                            <div className="bg-orange-400 h-6 rounded-full" style={{ width: '120pt' }}>
-                                <div className="flex justify-center items-center h-full text-white">120pt</div>
+                            <div className="bg-green-400 h-6 rounded-full" style={{ width: '400pt' }}>
+                                <div className="flex justify-center items-center h-full text-white">400pt</div>
                             </div>
                         </div>
                     </div>
-                    <p>To be implemented</p>
+                    <div className="flex items-center">
+                        <div className="flex items-center min-w-[250px]">
+                            <Image src="/avator5.png" alt="avator" width={12} height={12} className="w-12 h-12 rounded-full mr-3" />
+                            <div>
+                                <p className="font-bold">Charlie</p>
+                                <p className="text-gray-600">charlie@gmail.com</p>
+                            </div>
+                        </div>
+                        <div className="flex-1">
+                            <div className="bg-pink-400 h-6 rounded-full" style={{ width: '280pt' }}>
+                                <div className="flex justify-center items-center h-full text-white">280pt</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center">
+                        <div className="flex items-center min-w-[250px]">
+                            <Image src="/avator2.png" alt="avator" width={12} height={12} className="w-12 h-12 rounded-full mr-3" />
+                            <div>
+                                <p className="font-bold">Mary</p>
+                                <p className="text-gray-600">mary@gmail.com</p>
+                            </div>
+                        </div>
+                        <div className="flex-1">
+                            <div className="bg-pink-400 h-6 rounded-full" style={{ width: '220pt' }}>
+                                <div className="flex justify-center items-center h-full text-white">220pt</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center">
+                        <div className="flex items-center min-w-[250px]">
+                            <Image src="/avator3.png" alt="avator" width={12} height={12} className="w-12 h-12 rounded-full mr-3" />
+                            <div>
+                                <p className="font-bold">Maria</p>
+                                <p className="text-gray-600">maria@gmail.com</p>
+                            </div>
+                        </div>
+                        <div className="flex-1">
+                            <div className="bg-pink-400 h-6 rounded-full" style={{ width: '100pt' }}>
+                                <div className="flex justify-center items-center h-full text-white">100pt</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center">
+                        <div className="flex items-center min-w-[250px]">
+                            <Image src="/avator4.png" alt="avator" width={12} height={12} className="w-12 h-12 rounded-full mr-3" />
+                            <div>
+                                <p className="font-bold">Pi</p>
+                                <p className="text-gray-600">pi@gmail.com</p>
+                            </div>
+                        </div>
+                        <div className="flex-1">
+                            <div className="bg-pink-400 h-6 rounded-full" style={{ width: '40pt' }}>
+                                <div className="flex justify-center items-center h-full text-white">40pt</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </DashboardLayout>

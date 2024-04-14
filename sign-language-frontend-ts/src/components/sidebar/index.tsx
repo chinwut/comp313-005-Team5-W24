@@ -36,7 +36,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
     return (
         <div className={`${(isOpen) ? 'w-[300px]' : 'w-0'} bg-orange-500 transition-all ease-in-out duration-300`}>
             <div className="p-4">
-                <Image className="mt-10 mx-auto max-w-full" src="/logo-full.png" alt="Logo" width={400} height={140} />
+                <Image className="mt-10 mx-auto max-w-full" src="/logo-full-inverse.png" alt="Logo" width={400} height={140} />
                 <div className="mt-8">
                     {links.map((link, index) => (
                         <Link key={index} href={link.href} className={`text-white mb-2 rounded-md block p-2 px-4 font-medium ${isActive(link.href) ? 'bg-orange-400' : ''} hover:bg-orange-400 transition-all duration-300`}>
