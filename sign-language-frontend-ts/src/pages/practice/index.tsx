@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { K2D } from "next/font/google";
 import DashboardLayout from '@/components/dashboard';
 import { useLogic } from '@/hooks/index';
+import ErrorBoundary from '@/components/error-boundary';
 
 const k2d = K2D({ weight: "800", subsets: ["latin"] })
 
@@ -36,10 +37,12 @@ const PracticePage = () => {
 
     return (
         <DashboardLayout>
-            <h1 className={`${k2d.className} font-bold max-w-[600px] text-6xl text-black`}>Practice</h1>
-            <video className="hidden" playsInline ref={videoElement} />
-            <canvas className="rounded-2xl mt-8" ref={canvasEl} width={maxVideoWidth} height={maxVideoHeight} />
-            {/* <p className={`${k2d.className} font-bold max-w-[600px] text-4xl text-orange-500 min-h-11 mb-4`}>{gestureLabel}</p> */}
+            <ErrorBoundary>
+                <h1 className={`${k2d.className} font-bold max-w-[600px] text-6xl text-black`}>Practice</h1>
+                <video className="hidden" playsInline ref={videoElement} />
+                <canvas className="rounded-2xl mt-8" ref={canvasEl} width={maxVideoWidth || 0} height={maxVideoHeight || 0} />
+                {/* <p className={`${k2d.className} font-bold max-w-[600px] text-4xl text-orange-500 min-h-11 mb-4`}>{gestureLabel}</p> */}
+            </ErrorBoundary>
         </DashboardLayout>
     );
 };

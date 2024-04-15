@@ -4,6 +4,7 @@ import { Toaster, resolveValue } from "react-hot-toast";
 import { Inter, Karla } from "next/font/google";
 import { ColorModeScript, ColorModeProvider } from "@chakra-ui/color-mode";
 import { ChakraProvider } from '@chakra-ui/react'
+import { useEffect } from "react";
 
 const inter = Inter({
     weight: ["500", "600", "700"],
@@ -20,6 +21,22 @@ const karla = Karla({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+
+    useEffect(() => {
+        const errorHandler = (event: any) => {
+            console.error('Caught in global:', event.error);
+            // Handle or log the error appropriately
+            event.preventDefault(); // This prevents the default browser error handler from taking over
+        };
+
+        window.addEventListener('error', errorHandler);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('error', errorHandler);
+        };
+    }, []);
+
     return (
         <main className={`${karla.variable} ${inter.variable} font-sans`}>
             <style jsx global>{`
