@@ -95,7 +95,7 @@ function useLogic(onGestureChange) {
     } catch (error) {
       console.log(error)
     }
-  }
+}
 
   const loadHands = () => {
     if (!hands.current) {
