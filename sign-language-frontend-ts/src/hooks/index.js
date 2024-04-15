@@ -40,45 +40,44 @@ function useLogic(onGestureChange) {
 
 
   async function onResults(results) {
-    if (canvasEl.current) {
-      const ctx = canvasEl.current.getContext("2d");
+    if (canvasEl.current && canvasEl.current.getContext) {
+        const ctx = canvasEl.current.getContext("2d");
+        if (ctx) {
+            ctx.save();
+            ctx.clearRect(0, 0, canvasEl.current.width, canvasEl.current.height);
+            ctx.drawImage(results.image, 0, 0, maxVideoWidth, maxVideoHeight);
 
-      ctx.save();
-      ctx.clearRect(0, 0, canvasEl.current.width, canvasEl.current.height);
-      ctx.drawImage(results.image, 0, 0, maxVideoWidth, maxVideoHeight);
-
-      if (results.multiHandLandmarks) {
-        for (const [index, landmarks] of results.multiHandLandmarks.entries()) {
-          processLandmark(landmarks, results.image).then(
-            (val) => {
-              handsGesture.current[index] = val
-              onGestureChange(`${CONFIGS.keypointClassifierLabels[val] || ""}`)
+            if (results.multiHandLandmarks) {
+                for (const [index, landmarks] of results.multiHandLandmarks.entries()) {
+                    processLandmark(landmarks, results.image).then(
+                        (val) => {
+                            handsGesture.current[index] = val;
+                            onGestureChange(`${CONFIGS.keypointClassifierLabels[val] || ""}`);
+                        }
+                    );
+                    ctx.fillStyle = "#ff0000";
+                    ctx.font = "24px serif";
+                    const landmarksX = landmarks.map((landmark) => landmark.x);
+                    const landmarksY = landmarks.map((landmark) => landmark.y);
+                    ctx.fillText(
+                        CONFIGS.keypointClassifierLabels[handsGesture.current[index]],
+                        maxVideoWidth * Math.min(...landmarksX),
+                        maxVideoHeight * Math.min(...landmarksY) - 15
+                    );
+                    drawConnectors(ctx, landmarks, HAND_CONNECTIONS, {
+                        color: "#00ffff",
+                        lineWidth: 2,
+                    });
+                    drawLandmarks(ctx, landmarks, {
+                        color: "#ffff29",
+                        lineWidth: 1,
+                    });
+                }
             }
-          );
-          ctx.fillStyle = "#ff0000";
-          ctx.font = "24px serif";
-          const landmarksX = landmarks.map((landmark) => landmark.x);
-          const landmarksY = landmarks.map((landmark) => landmark.y);
-          ctx.fillStyle = "#ff0000";
-          ctx.font = "24px serif";
-          ctx.fillText(
-            CONFIGS.keypointClassifierLabels[handsGesture.current[index]],
-            maxVideoWidth * Math.min(...landmarksX),
-            maxVideoHeight * Math.min(...landmarksY) - 15
-          );
-          drawConnectors(ctx, landmarks, HAND_CONNECTIONS, {
-            color: "#00ffff",
-            lineWidth: 2,
-          });
-          drawLandmarks(ctx, landmarks, {
-            color: "#ffff29",
-            lineWidth: 1,
-          });
+            ctx.restore();
         }
-      }
-      ctx.restore();
     }
-  }
+}
 
   const loadHands = () => {
     hands.current = new Hands({
